@@ -8,22 +8,55 @@
 
 /* Begin PBXBuildFile section */
 		2E5F4D311F42FC270050AD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D301F42FC270050AD76 /* AppDelegate.swift */; };
-		2E5F4D331F42FC270050AD76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D321F42FC270050AD76 /* ViewController.swift */; };
+		2E5F4D331F42FC270050AD76 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D321F42FC270050AD76 /* MapViewController.swift */; };
 		2E5F4D361F42FC270050AD76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F4D341F42FC270050AD76 /* Main.storyboard */; };
 		2E5F4D391F42FC270050AD76 /* Environment_Behavior.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D371F42FC270050AD76 /* Environment_Behavior.xcdatamodeld */; };
 		2E5F4D3B1F42FC270050AD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F4D3A1F42FC270050AD76 /* Assets.xcassets */; };
 		2E5F4D3E1F42FC270050AD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F4D3C1F42FC270050AD76 /* LaunchScreen.storyboard */; };
+		2E5F4D461F42FC520050AD76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5F4D451F42FC520050AD76 /* Mapbox.framework */; };
+		2E5F4D471F42FC520050AD76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5F4D451F42FC520050AD76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E5F4D521F4301A40050AD76 /* NodeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D4A1F4301A40050AD76 /* NodeAnnotation.swift */; };
+		2E5F4D531F4301A40050AD76 /* StyleAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D4B1F4301A40050AD76 /* StyleAnnotationView.swift */; };
+		2E5F4D541F4301A40050AD76 /* RouteLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D4C1F4301A40050AD76 /* RouteLine.swift */; };
+		2E5F4D551F4301A40050AD76 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D4D1F4301A40050AD76 /* Node.swift */; };
+		2E5F4D561F4301A40050AD76 /* WebGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D4E1F4301A40050AD76 /* WebGraph.swift */; };
+		2E5F4D571F4301A40050AD76 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D4F1F4301A40050AD76 /* Stack.swift */; };
+		2E5F4D581F4301A40050AD76 /* Array+RemovObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D501F4301A40050AD76 /* Array+RemovObject.swift */; };
+		2E5F4D591F4301A40050AD76 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D511F4301A40050AD76 /* Queue.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2E5F4D481F42FC520050AD76 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2E5F4D471F42FC520050AD76 /* Mapbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2E5F4D2D1F42FC270050AD76 /* Environment Behavior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Environment Behavior.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5F4D301F42FC270050AD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E5F4D321F42FC270050AD76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E5F4D321F42FC270050AD76 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2E5F4D351F42FC270050AD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E5F4D381F42FC270050AD76 /* Environment_Behavior.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Environment_Behavior.xcdatamodel; sourceTree = "<group>"; };
 		2E5F4D3A1F42FC270050AD76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E5F4D3D1F42FC270050AD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E5F4D3F1F42FC270050AD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E5F4D451F42FC520050AD76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		2E5F4D4A1F4301A40050AD76 /* NodeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeAnnotation.swift; sourceTree = "<group>"; };
+		2E5F4D4B1F4301A40050AD76 /* StyleAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleAnnotationView.swift; sourceTree = "<group>"; };
+		2E5F4D4C1F4301A40050AD76 /* RouteLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteLine.swift; sourceTree = "<group>"; };
+		2E5F4D4D1F4301A40050AD76 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		2E5F4D4E1F4301A40050AD76 /* WebGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebGraph.swift; sourceTree = "<group>"; };
+		2E5F4D4F1F4301A40050AD76 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		2E5F4D501F4301A40050AD76 /* Array+RemovObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemovObject.swift"; sourceTree = "<group>"; };
+		2E5F4D511F4301A40050AD76 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E5F4D461F42FC520050AD76 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +74,7 @@
 		2E5F4D241F42FC270050AD76 = {
 			isa = PBXGroup;
 			children = (
+				2E5F4D451F42FC520050AD76 /* Mapbox.framework */,
 				2E5F4D2F1F42FC270050AD76 /* Environment Behavior */,
 				2E5F4D2E1F42FC270050AD76 /* Products */,
 			);
@@ -57,7 +92,15 @@
 			isa = PBXGroup;
 			children = (
 				2E5F4D301F42FC270050AD76 /* AppDelegate.swift */,
-				2E5F4D321F42FC270050AD76 /* ViewController.swift */,
+				2E5F4D321F42FC270050AD76 /* MapViewController.swift */,
+				2E5F4D4A1F4301A40050AD76 /* NodeAnnotation.swift */,
+				2E5F4D4B1F4301A40050AD76 /* StyleAnnotationView.swift */,
+				2E5F4D4C1F4301A40050AD76 /* RouteLine.swift */,
+				2E5F4D4D1F4301A40050AD76 /* Node.swift */,
+				2E5F4D4E1F4301A40050AD76 /* WebGraph.swift */,
+				2E5F4D4F1F4301A40050AD76 /* Stack.swift */,
+				2E5F4D501F4301A40050AD76 /* Array+RemovObject.swift */,
+				2E5F4D511F4301A40050AD76 /* Queue.swift */,
 				2E5F4D341F42FC270050AD76 /* Main.storyboard */,
 				2E5F4D3A1F42FC270050AD76 /* Assets.xcassets */,
 				2E5F4D3C1F42FC270050AD76 /* LaunchScreen.storyboard */,
@@ -77,6 +120,8 @@
 				2E5F4D291F42FC270050AD76 /* Sources */,
 				2E5F4D2A1F42FC270050AD76 /* Frameworks */,
 				2E5F4D2B1F42FC270050AD76 /* Resources */,
+				2E5F4D481F42FC520050AD76 /* Embed Frameworks */,
+				2E5F4D491F42FDBE0050AD76 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -135,14 +180,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E5F4D491F42FDBE0050AD76 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2E5F4D291F42FC270050AD76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E5F4D331F42FC270050AD76 /* ViewController.swift in Sources */,
+				2E5F4D521F4301A40050AD76 /* NodeAnnotation.swift in Sources */,
+				2E5F4D571F4301A40050AD76 /* Stack.swift in Sources */,
+				2E5F4D581F4301A40050AD76 /* Array+RemovObject.swift in Sources */,
+				2E5F4D591F4301A40050AD76 /* Queue.swift in Sources */,
+				2E5F4D561F4301A40050AD76 /* WebGraph.swift in Sources */,
+				2E5F4D331F42FC270050AD76 /* MapViewController.swift in Sources */,
+				2E5F4D531F4301A40050AD76 /* StyleAnnotationView.swift in Sources */,
+				2E5F4D541F4301A40050AD76 /* RouteLine.swift in Sources */,
 				2E5F4D391F42FC270050AD76 /* Environment_Behavior.xcdatamodeld in Sources */,
 				2E5F4D311F42FC270050AD76 /* AppDelegate.swift in Sources */,
+				2E5F4D551F4301A40050AD76 /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +335,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6KQ6342GL4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Environment Behavior/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jli.Environment-Behavior";
@@ -279,6 +352,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6KQ6342GL4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Environment Behavior/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jli.Environment-Behavior";
