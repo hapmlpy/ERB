@@ -14,6 +14,9 @@ class NodeAnnotioan: MGLPointAnnotation {
     
     var nodeType: NodeType = .null
     var level: Int?
+    var willUseImage: Bool = false
+    var imageName: String!
+    var reuseIdentifier: String?
     
     override init(){
         super.init()
@@ -24,9 +27,11 @@ class NodeAnnotioan: MGLPointAnnotation {
         self.coordinate = node.location
         if node.nodeType == .base{
             self.nodeType = .base
+            self.imageName = "base"
         }
-        if node.nodeType == .infrastructure || node.nodeType == .suspend {
+        if node.nodeType == .infrastructure || node.nodeType == .suspend || node.nodeType == .null {
             self.nodeType = .infrastructure
+            self.imageName = "bin"
         }
         
         if let title = node.id {
@@ -38,6 +43,7 @@ class NodeAnnotioan: MGLPointAnnotation {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     
 }
 extension NodeAnnotioan {

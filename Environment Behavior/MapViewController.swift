@@ -18,7 +18,7 @@ enum NodeType {
     case suspend
 }
 
-class MapViewController: UIViewController,UIGestureRecognizerDelegate {
+class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var baseButton: UIButton!
@@ -40,6 +40,8 @@ class MapViewController: UIViewController,UIGestureRecognizerDelegate {
     var polyLineFeatures = [MGLShape]()
     
     var pointSource: MGLShapeSource?
+    
+    var annotations = [NodeAnnotioan]()
     
     
     var webIDs = [Int]()
@@ -76,7 +78,7 @@ class MapViewController: UIViewController,UIGestureRecognizerDelegate {
     
     func initMapView(){
         mapView.delegate = self
-        mapView.zoomLevel = 10
+        mapView.zoomLevel = 14
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
     }
@@ -93,11 +95,33 @@ extension MapViewController: MGLMapViewDelegate{
         queue.async {
             self.addLayer(to:style)
             let gesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:style:)))
-            gesture.delegate = self
+            //见文档https://www.mapbox.com/ios-sdk/api/3.6.0/Classes/MGLMapView.html
+            for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
+                gesture.require(toFail: recognizer)
+            }
             mapView.addGestureRecognizer(gesture)
         }
     }
     
+    func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        guard annotation is MGLPointAnnotation else {
+            return nil
+        }
+        
+        let nodeAnnotation = annotation as? NodeAnnotioan
+        if nodeAnnotation?.willUseImage == false {
+            return nil
+        }
+        let imagePick = UIImage(named: (nodeAnnotation?.imageName)!)
+        
+        let reuseIdentifier = nodeAnnotation?.reuseIdentifier
+        if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier!) {
+            return annotationImage
+        }else{
+            return MGLAnnotationImage(image: imagePick!, reuseIdentifier: reuseIdentifier!)
+
+        }
+    }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
         //使用自定义的annotation class
@@ -105,16 +129,21 @@ extension MapViewController: MGLMapViewDelegate{
             return nil
         }
         
-        let annotation = annotation as? NodeAnnotioan
         
-        let reuseIdentifier = "资产"
+        let nodeAnnotation = annotation as? NodeAnnotioan
+        if nodeAnnotation?.willUseImage == true{
+            return nil
+        }
+        
+        
+        let reuseIdentifier = "markers"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
         
         if annotationView == nil {
             annotationView = StyleAnnotationView(reuseIdentifier: reuseIdentifier, size:8)
             
             //使用https://www.ralfebert.de/snippets/ios/swift-uicolor-picker/ 选颜色
-            let level = Double((annotation?.level)!)
+            let level = Double((nodeAnnotation?.level)!)
             var hue = CGFloat()
             var saturation = CGFloat()
             var brightness = CGFloat()
@@ -134,8 +163,8 @@ extension MapViewController: MGLMapViewDelegate{
                 
             }else{
                 
-                hue = CGFloat(modulateMapping(oldValue: level, oldMin: 0, oldMax: 8, newMin: 62, newMax: 104))
-                saturation = CGFloat(modulateMapping(oldValue: level, oldMin: 0, oldMax: 8, newMin: 74, newMax: 57))
+                hue = CGFloat(modulateMapping(oldValue: level, oldMin: 0, oldMax: 8, newMin: 66, newMax: 104))
+                saturation = CGFloat(modulateMapping(oldValue: level, oldMin: 0, oldMax: 8, newMin: 72, newMax: 57))
                 brightness = CGFloat(modulateMapping(oldValue: level, oldMin: 0, oldMax: 8, newMin: 90, newMax: 83))
                 alpha = CGFloat(modulateMapping(oldValue: level, oldMin: 0, oldMax: 8, newMin: 1, newMax: 0.7))
                 
@@ -145,13 +174,37 @@ extension MapViewController: MGLMapViewDelegate{
             
             annotationView!.layer.backgroundColor = color.cgColor
             annotationView!.layer.opacity = 1
+            print(level)
         }
         return annotationView
     }
     
+    
+    
     func addLayer(to style: MGLStyle){
         //三部曲：source -> layer -> style
         
+        let color1 = UIColor(hue: 66/360, saturation: 72/100, brightness: 90/100, alpha: 1.0)
+        let color2 = UIColor(hue: 104/360, saturation: 57/100, brightness: 83/100, alpha: 1.0) /* #7cd65c */
+        let color3 = UIColor(hue: 209/360, saturation: 19/100, brightness: 46/100, alpha: 1.0) /* #22232b */
+        
+        let stopColor = [
+            0: MGLStyleValue<UIColor>(rawValue: color1),
+            5: MGLStyleValue<UIColor>(rawValue: color2),
+            12: MGLStyleValue<UIColor>(rawValue: color3)
+        ]
+        
+        let stopOpacity = [
+            0: MGLStyleValue<NSNumber>(rawValue: 0.8),
+            5: MGLStyleValue<NSNumber>(rawValue: 0.4),
+            12: MGLStyleValue<NSNumber>(rawValue: 0.4)
+        ]
+        
+        let stopOpacityforNode = [
+            0: MGLStyleValue<NSNumber>(rawValue: 0.4),
+            5: MGLStyleValue<NSNumber>(rawValue: 0.2),
+            12: MGLStyleValue<NSNumber>(rawValue: 0.2)
+        ]
         //add line layer
         let lineSource = MGLShapeSource(identifier: "route", shape: nil, options: nil)
         style.addSource(lineSource)
@@ -166,29 +219,14 @@ extension MapViewController: MGLMapViewDelegate{
                                                           18: MGLStyleValue<NSNumber>(rawValue: 3)],
                                             options: [.defaultValue : MGLConstantStyleValue<NSNumber>(rawValue: 1.5)])
         
-        let color1 = UIColor(hue: 62/360, saturation: 74/100, brightness: 90/100, alpha: 1.0) /* #e1e83b */
-        let color2 = UIColor(hue: 104/360, saturation: 57/100, brightness: 83/100, alpha: 1.0) /* #7cd65c */
-        let color3 = UIColor(hue: 209/360, saturation: 19/100, brightness: 46/100, alpha: 1.0) /* #22232b */
         
-        
-        
-        
-        let stopColor = [
-            0: MGLStyleValue<UIColor>(rawValue: color1),
-            5: MGLStyleValue<UIColor>(rawValue: color2),
-            12: MGLStyleValue<UIColor>(rawValue: color3)
-        ]
         lineLayer.lineColor = MGLStyleValue(interpolationMode: .exponential,
                                             sourceStops: stopColor,
                                             attributeName: "level",
                                             options: [.defaultValue: MGLStyleValue(rawValue:color3)])
         
         
-        let stopOpacity = [
-            0: MGLStyleValue<NSNumber>(rawValue: 0.8),
-            5: MGLStyleValue<NSNumber>(rawValue: 0.4),
-            12: MGLStyleValue<NSNumber>(rawValue: 0.4)
-        ]
+        
         lineLayer.lineOpacity = MGLStyleValue(interpolationMode: .exponential,
                                               sourceStops: stopOpacity,
                                               attributeName: "level",
@@ -197,11 +235,7 @@ extension MapViewController: MGLMapViewDelegate{
         style.addLayer(lineLayer)
         
         
-        let stopOpacityforNode = [
-            0: MGLStyleValue<NSNumber>(rawValue: 0.4),
-            5: MGLStyleValue<NSNumber>(rawValue: 0.2),
-            12: MGLStyleValue<NSNumber>(rawValue: 0.2)
-        ]
+        
         
         //add node layer
         let nodeSource = MGLShapeSource(identifier: "node", shape: nil, options: nil)
@@ -224,10 +258,12 @@ extension MapViewController: MGLMapViewDelegate{
                                                 options: [.defaultValue: MGLStyleValue<NSNumber>(rawValue:0.5)])
         
         
-        nodeLayer.circleRadius = MGLStyleValue(interpolationMode: .exponential,
-                                               cameraStops: [12: MGLStyleValue(rawValue: 6),
-                                                             22: MGLStyleValue(rawValue: 220)],
-                                               options: [.defaultValue: 10])
+//        nodeLayer.circleRadius = MGLStyleValue(interpolationMode: .exponential,
+//                                               cameraStops: [12: MGLStyleValue(rawValue: 6),
+//                                                             22: MGLStyleValue(rawValue: 220)],
+//                                               options: [.defaultValue: 10])
+        
+        nodeLayer.circleRadius = MGLStyleValue(rawValue: 0.01)
         
         nodeLayer.circleStrokeColor = MGLStyleValue(interpolationMode: .exponential,
                                                     sourceStops: stopColor,
@@ -242,12 +278,18 @@ extension MapViewController: MGLMapViewDelegate{
                                                       attributeName: "level",
                                                       options: [.defaultValue: MGLStyleValue<NSNumber>(rawValue:0.5)])
         
+        
+        
         nodeLayer.circleStrokeWidth = MGLStyleValue(rawValue: 0.5)
         
-        style.addLayer(nodeLayer)
+        
+        style.insertLayer(nodeLayer, above: lineLayer)
+        
+        
     }
     
     func handleTap(_ gesture: UITapGestureRecognizer, style: MGLStyle){
+        
         let spot = gesture.location(in: mapView)
         let spotCoordinate = mapView.convert(spot, toCoordinateFrom: mapView)
         
@@ -255,8 +297,8 @@ extension MapViewController: MGLMapViewDelegate{
         markers(nodeType: activeType, node: node)
         
         nodeID = nodeID + 1
-        print("\(activeType)")
         
+        activeType = .null
     }
     
     func markers(nodeType: NodeType, node: Node) {
@@ -329,7 +371,7 @@ extension MapViewController: MGLMapViewDelegate{
             }
             infrastructures.append(node)
         default:
-            print("create markers")
+            break
         }
         //print("\n")
         for graph in graphs {
@@ -350,6 +392,13 @@ extension MapViewController: MGLMapViewDelegate{
         var annotations = [NodeAnnotioan]()
         for node in getNode{
             let pointAnnotation = NodeAnnotioan(node: node)
+            pointAnnotation.willUseImage = true
+            if node.nodeType == .base{
+                pointAnnotation.reuseIdentifier = "base"
+            }else{
+                pointAnnotation.reuseIdentifier = "bin"
+            }
+            
             annotations.append(pointAnnotation)
         }
         mapView.addAnnotations(annotations)

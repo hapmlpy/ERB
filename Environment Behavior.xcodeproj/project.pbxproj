@@ -23,6 +23,7 @@
 		2E5F4D571F4301A40050AD76 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D4F1F4301A40050AD76 /* Stack.swift */; };
 		2E5F4D581F4301A40050AD76 /* Array+RemovObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D501F4301A40050AD76 /* Array+RemovObject.swift */; };
 		2E5F4D591F4301A40050AD76 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D511F4301A40050AD76 /* Queue.swift */; };
+		2E851DDD1F442D22003AC75E /* StyleAnnotationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		2E5F4D4F1F4301A40050AD76 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		2E5F4D501F4301A40050AD76 /* Array+RemovObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemovObject.swift"; sourceTree = "<group>"; };
 		2E5F4D511F4301A40050AD76 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleAnnotationImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				2E5F4D321F42FC270050AD76 /* MapViewController.swift */,
 				2E5F4D4A1F4301A40050AD76 /* NodeAnnotation.swift */,
 				2E5F4D4B1F4301A40050AD76 /* StyleAnnotationView.swift */,
+				2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */,
 				2E5F4D4C1F4301A40050AD76 /* RouteLine.swift */,
 				2E5F4D4D1F4301A40050AD76 /* Node.swift */,
 				2E5F4D4E1F4301A40050AD76 /* WebGraph.swift */,
@@ -209,6 +212,7 @@
 				2E5F4D331F42FC270050AD76 /* MapViewController.swift in Sources */,
 				2E5F4D531F4301A40050AD76 /* StyleAnnotationView.swift in Sources */,
 				2E5F4D541F4301A40050AD76 /* RouteLine.swift in Sources */,
+				2E851DDD1F442D22003AC75E /* StyleAnnotationImage.swift in Sources */,
 				2E5F4D391F42FC270050AD76 /* Environment_Behavior.xcdatamodeld in Sources */,
 				2E5F4D311F42FC270050AD76 /* AppDelegate.swift in Sources */,
 				2E5F4D551F4301A40050AD76 /* Node.swift in Sources */,
@@ -383,6 +387,7 @@
 				2E5F4D441F42FC270050AD76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

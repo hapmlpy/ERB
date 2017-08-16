@@ -24,16 +24,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ab-R3-z0k" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IJ-Kl-VnQ">
-                                        <rect key="frame" x="242" y="24" width="94" height="30"/>
-                                        <state key="normal" title="Infrastructure"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IJ-Kl-VnQ">
+                                        <rect key="frame" x="311" y="24" width="25" height="25"/>
+                                        <state key="normal" image="bin"/>
                                         <connections>
                                             <action selector="activeInfra" destination="BYZ-38-t0r" eventType="touchUpInside" id="eje-sF-sNo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrI-i9-IrP">
-                                        <rect key="frame" x="192" y="24" width="33" height="30"/>
-                                        <state key="normal" title="base"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrI-i9-IrP">
+                                        <rect key="frame" x="269" y="24" width="25" height="25"/>
+                                        <state key="normal" image="base"/>
                                         <connections>
                                             <action selector="activeBase" destination="BYZ-38-t0r" eventType="touchUpInside" id="7VA-Wb-y8i"/>
                                         </connections>
@@ -80,4 +80,8 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="base" width="25" height="25"/>
+        <image name="bin" width="25" height="25"/>
+    </resources>
 </document>
