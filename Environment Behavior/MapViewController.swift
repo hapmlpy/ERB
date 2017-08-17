@@ -101,6 +101,8 @@ extension MapViewController: MGLMapViewDelegate{
             }
             mapView.addGestureRecognizer(gesture)
         }
+        
+        
     }
     
     func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
@@ -118,9 +120,24 @@ extension MapViewController: MGLMapViewDelegate{
         if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier!) {
             return annotationImage
         }else{
+            //把annotation这层移到style最上面去
+            let symbolSource = MGLShapeSource(identifier: "annotation")
+            var symbolLayer = MGLSymbolStyleLayer(identifier: "annotation", source: symbolSource)
+            let layers = mapView.style?.layers
+            for layer in layers!{
+                if type(of: layer).description() == "MGLSymbolStyleLayer" {
+                    symbolLayer = layer as! MGLSymbolStyleLayer
+                    mapView.style?.removeLayer(layer)
+                }
+            }
+            mapView.style?.addLayer(symbolLayer)
+            //print(symbolLayer)
+
             return MGLAnnotationImage(image: imagePick!, reuseIdentifier: reuseIdentifier!)
 
         }
+        
+        
     }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
@@ -205,6 +222,50 @@ extension MapViewController: MGLMapViewDelegate{
             5: MGLStyleValue<NSNumber>(rawValue: 0.2),
             12: MGLStyleValue<NSNumber>(rawValue: 0.2)
         ]
+
+        
+        //add node layer
+        let nodeSource = MGLShapeSource(identifier: "node", shape: nil, options: nil)
+        style.addSource(nodeSource)
+        
+        pointSource = nodeSource
+        
+        let nodeLayer = MGLCircleStyleLayer(identifier: "node", source: nodeSource)
+        
+        nodeLayer.circleColor = MGLStyleValue(interpolationMode: .exponential,
+                                              sourceStops: stopColor,
+                                              attributeName: "level",
+                                              options: [.defaultValue: MGLStyleValue(rawValue:color3)])    
+        
+        nodeLayer.circleOpacity = MGLStyleValue(interpolationMode: .exponential,
+                                                sourceStops: stopOpacityforNode,
+                                                attributeName: "level",
+                                                options: [.defaultValue: MGLStyleValue<NSNumber>(rawValue:0.5)])
+        
+        
+        nodeLayer.circleRadius = MGLStyleValue(interpolationMode: .exponential,
+                                               cameraStops: [12: MGLStyleValue(rawValue: 6),
+                                                             22: MGLStyleValue(rawValue: 220)],
+                                               options: [.defaultValue: 10])
+        
+        
+        nodeLayer.circleStrokeColor = MGLStyleValue(interpolationMode: .exponential,
+                                                    sourceStops: stopColor,
+                                                    attributeName: "level",
+                                                    options: [.defaultValue: MGLStyleValue(rawValue:color3)])
+        
+        nodeLayer.circleStrokeOpacity = MGLStyleValue(interpolationMode: .exponential,
+                                                      sourceStops: [
+                                                        0: MGLStyleValue<NSNumber>(rawValue: 0.8),
+                                                        5: MGLStyleValue<NSNumber>(rawValue: 0.6),
+                                                        12: MGLStyleValue<NSNumber>(rawValue: 0.6)],
+                                                      attributeName: "level",
+                                                      options: [.defaultValue: MGLStyleValue<NSNumber>(rawValue:0.5)])
+        
+        nodeLayer.circleStrokeWidth = MGLStyleValue(rawValue: 0.5)
+        
+        style.addLayer(nodeLayer)
+        
         //add line layer
         let lineSource = MGLShapeSource(identifier: "route", shape: nil, options: nil)
         style.addSource(lineSource)
@@ -233,59 +294,7 @@ extension MapViewController: MGLMapViewDelegate{
                                               options: [.defaultValue: MGLStyleValue<NSNumber>(rawValue:0.5)])
         
         style.addLayer(lineLayer)
-        
-        
-        
-        
-        //add node layer
-        let nodeSource = MGLShapeSource(identifier: "node", shape: nil, options: nil)
-        style.addSource(nodeSource)
-        
-        pointSource = nodeSource
-        
-        let nodeLayer = MGLCircleStyleLayer(identifier: "node", source: nodeSource)
-        
-        nodeLayer.circleColor = MGLStyleValue(interpolationMode: .exponential,
-                                              sourceStops: stopColor,
-                                              attributeName: "level",
-                                              options: [.defaultValue: MGLStyleValue(rawValue:color3)])
-        
-        
-        
-        nodeLayer.circleOpacity = MGLStyleValue(interpolationMode: .exponential,
-                                                sourceStops: stopOpacityforNode,
-                                                attributeName: "level",
-                                                options: [.defaultValue: MGLStyleValue<NSNumber>(rawValue:0.5)])
-        
-        
-//        nodeLayer.circleRadius = MGLStyleValue(interpolationMode: .exponential,
-//                                               cameraStops: [12: MGLStyleValue(rawValue: 6),
-//                                                             22: MGLStyleValue(rawValue: 220)],
-//                                               options: [.defaultValue: 10])
-        
-        nodeLayer.circleRadius = MGLStyleValue(rawValue: 0.01)
-        
-        nodeLayer.circleStrokeColor = MGLStyleValue(interpolationMode: .exponential,
-                                                    sourceStops: stopColor,
-                                                    attributeName: "level",
-                                                    options: [.defaultValue: MGLStyleValue(rawValue:color3)])
-        
-        nodeLayer.circleStrokeOpacity = MGLStyleValue(interpolationMode: .exponential,
-                                                      sourceStops: [
-                                                        0: MGLStyleValue<NSNumber>(rawValue: 0.8),
-                                                        5: MGLStyleValue<NSNumber>(rawValue: 0.6),
-                                                        12: MGLStyleValue<NSNumber>(rawValue: 0.6)],
-                                                      attributeName: "level",
-                                                      options: [.defaultValue: MGLStyleValue<NSNumber>(rawValue:0.5)])
-        
-        
-        
-        nodeLayer.circleStrokeWidth = MGLStyleValue(rawValue: 0.5)
-        
-        
-        style.insertLayer(nodeLayer, above: lineLayer)
-        
-        
+     
     }
     
     func handleTap(_ gesture: UITapGestureRecognizer, style: MGLStyle){
@@ -298,7 +307,9 @@ extension MapViewController: MGLMapViewDelegate{
         
         nodeID = nodeID + 1
         
-        activeType = .null
+        //activeType = .null
+        
+        
     }
     
     func markers(nodeType: NodeType, node: Node) {
@@ -726,6 +737,13 @@ extension Dictionary {
         var dict = self
         dict.merge(with: dictionary)
         return dict
+    }
+}
+
+extension MGLSymbolStyleLayer {
+    
+    func className() -> String {
+        return("SymbolLayer")
     }
 }
 
