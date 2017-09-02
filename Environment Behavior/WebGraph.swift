@@ -139,33 +139,36 @@ class WebGraph {
         
         switch nodetype {
         case .base:
-            node.belongTo = self
-            node.nodeType = .base
-            node.web = (key: webid, value: 0)
-            node.level = 0
-            webIDs.append(webid)
-            
-            self.webID = webid
+          node.belongTo = self
+          node.nodeType = .base
+          node.web = (key: webid, value: 0)
+          node.level = 0
+          webIDs.append(webid)
+          
+          self.webID = webid
             
         case .infrastructure:
-            node.belongTo = self
-            node.nodeType = .infrastructure
-            node.level = nil
-            let graphwebid = self.webID
-            node.web?.key = graphwebid!
+          node.belongTo = self
+          node.nodeType = .infrastructure
+          node.level = nil
+          let graphwebid = self.webID
+          node.web?.key = graphwebid!
             
         case .suspend:
-            node.belongTo = self
-            node.nodeType = .suspend
-            node.web = (key: webid, value: 3000)
-            node.level = 3000
-            webIDs.append(webid)
-            //print("add suspend node, webid \(webid)")
-            
-            self.webID = webid
+          node.belongTo = self
+          node.nodeType = .suspend
+          node.web = (key: webid, value: 3000)
+          node.level = 3000
+          webIDs.append(webid)
+          //print("add suspend node, webid \(webid)")
+          
+          self.webID = webid
             
         case .null:
-            return
+          return
+          
+        default:
+          return
         }
         appendNodetoCanvas(node: node)
     }
@@ -236,7 +239,7 @@ class WebGraph {
             guard item.upstreams.count > 0 else{
                 print("node No.\(item.id!) don't has upstream line anymore")
                 print(">>>>>stop check upsream web<<<<<")
-                stack.pop()
+                _ = stack.pop()
                 break }
             //不论当前node有多少个web，用最近放进去的一个
             print("get item node No.\(item.id!) ")
@@ -277,7 +280,7 @@ class WebGraph {
             i = i+1
         }//while end
         //删掉队尾
-        stack.pop()
+        _ = stack.pop()
         //处理临时数组里的line
         //print("there are \(temLine.count) lines need to update")
         for line in temLine{
@@ -696,7 +699,7 @@ extension WebGraph {
         outer: while let item = stack.peek() {
             //如果再也找不到上游线条了就退出
             guard item.upstreams.count > 0 else{
-                stack.pop()
+                _ = stack.pop()
                 return }
             
             for route in item.upstreams {
@@ -708,7 +711,7 @@ extension WebGraph {
                 }
             }
             //删掉队尾
-            stack.pop()
+            _ = stack.pop()
         }
     }
 }
@@ -724,7 +727,7 @@ extension WebGraph: Equatable {
     static func == (lhs: WebGraph, rhs: WebGraph) -> Bool {
         return
             lhs.webID == rhs.webID
-        lhs.canvas == rhs.canvas
+        //lhs.canvas == rhs.canvas
         
     }
 }

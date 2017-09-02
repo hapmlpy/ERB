@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0D92E31F593471005CBAEA /* MapVC+MapboxDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D92E21F593471005CBAEA /* MapVC+MapboxDelegate.swift */; };
+		2E0D92E71F594145005CBAEA /* MapVC+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D92E61F594145005CBAEA /* MapVC+Utilities.swift */; };
+		2E0D92EA1F594233005CBAEA /* MapVC+OrgnizeSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D92E91F594233005CBAEA /* MapVC+OrgnizeSubViews.swift */; };
+		2E0D92EC1F595451005CBAEA /* MapVC+UserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D92EB1F595451005CBAEA /* MapVC+UserInteraction.swift */; };
+		2E0D92EE1F59AA85005CBAEA /* Animo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0D92ED1F59AA85005CBAEA /* Animo.framework */; };
+		2E0D92EF1F59AA85005CBAEA /* Animo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0D92ED1F59AA85005CBAEA /* Animo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E2009B71F5A5470008FBF26 /* MapVC+DrawMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2009B61F5A5470008FBF26 /* MapVC+DrawMap.swift */; };
+		2E2009B91F5AFCFD008FBF26 /* AMPopTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2009B81F5AFCFD008FBF26 /* AMPopTip.framework */; };
+		2E2009BA1F5AFCFD008FBF26 /* AMPopTip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2009B81F5AFCFD008FBF26 /* AMPopTip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E2009BC1F5B01EF008FBF26 /* StyleCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2009BB1F5B01EF008FBF26 /* StyleCalloutView.swift */; };
+		2E2009BE1F5B2651008FBF26 /* Stellar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2009BD1F5B2651008FBF26 /* Stellar.framework */; };
+		2E2009BF1F5B2651008FBF26 /* Stellar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2009BD1F5B2651008FBF26 /* Stellar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E5F4D311F42FC270050AD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D301F42FC270050AD76 /* AppDelegate.swift */; };
 		2E5F4D331F42FC270050AD76 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D321F42FC270050AD76 /* MapViewController.swift */; };
 		2E5F4D361F42FC270050AD76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F4D341F42FC270050AD76 /* Main.storyboard */; };
@@ -23,7 +35,9 @@
 		2E5F4D571F4301A40050AD76 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D4F1F4301A40050AD76 /* Stack.swift */; };
 		2E5F4D581F4301A40050AD76 /* Array+RemovObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D501F4301A40050AD76 /* Array+RemovObject.swift */; };
 		2E5F4D591F4301A40050AD76 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D511F4301A40050AD76 /* Queue.swift */; };
+		2E7A00EA1F4DCE4A001D16C8 /* Hero.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7A00E81F4DCE4A001D16C8 /* Hero.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E851DDD1F442D22003AC75E /* StyleAnnotationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */; };
+		2EEA85D71F46CD9C009134EC /* Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEA85D61F46CD9C009134EC /* Hero.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +47,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2E2009BF1F5B2651008FBF26 /* Stellar.framework in Embed Frameworks */,
+				2E2009BA1F5AFCFD008FBF26 /* AMPopTip.framework in Embed Frameworks */,
+				2E7A00EA1F4DCE4A001D16C8 /* Hero.framework in Embed Frameworks */,
 				2E5F4D471F42FC520050AD76 /* Mapbox.framework in Embed Frameworks */,
+				2E0D92EF1F59AA85005CBAEA /* Animo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +59,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E0D92E21F593471005CBAEA /* MapVC+MapboxDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapVC+MapboxDelegate.swift"; sourceTree = "<group>"; };
+		2E0D92E61F594145005CBAEA /* MapVC+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapVC+Utilities.swift"; sourceTree = "<group>"; };
+		2E0D92E91F594233005CBAEA /* MapVC+OrgnizeSubViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapVC+OrgnizeSubViews.swift"; sourceTree = "<group>"; };
+		2E0D92EB1F595451005CBAEA /* MapVC+UserInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapVC+UserInteraction.swift"; sourceTree = "<group>"; };
+		2E0D92ED1F59AA85005CBAEA /* Animo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Animo.framework; path = Carthage/Build/iOS/Animo.framework; sourceTree = "<group>"; };
+		2E2009B61F5A5470008FBF26 /* MapVC+DrawMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapVC+DrawMap.swift"; sourceTree = "<group>"; };
+		2E2009B81F5AFCFD008FBF26 /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = Carthage/Build/iOS/AMPopTip.framework; sourceTree = "<group>"; };
+		2E2009BB1F5B01EF008FBF26 /* StyleCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleCalloutView.swift; sourceTree = "<group>"; };
+		2E2009BD1F5B2651008FBF26 /* Stellar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stellar.framework; path = Carthage/Build/iOS/Stellar.framework; sourceTree = "<group>"; };
 		2E5F4D2D1F42FC270050AD76 /* Environment Behavior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Environment Behavior.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5F4D301F42FC270050AD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E5F4D321F42FC270050AD76 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +85,9 @@
 		2E5F4D4F1F4301A40050AD76 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		2E5F4D501F4301A40050AD76 /* Array+RemovObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RemovObject.swift"; sourceTree = "<group>"; };
 		2E5F4D511F4301A40050AD76 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		2E7A00E81F4DCE4A001D16C8 /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hero.framework; path = Carthage/Build/iOS/Hero.framework; sourceTree = "<group>"; };
 		2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleAnnotationImage.swift; sourceTree = "<group>"; };
+		2EEA85D61F46CD9C009134EC /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hero.framework; path = Carthage/Build/iOS/Hero.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,16 +95,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E2009BE1F5B2651008FBF26 /* Stellar.framework in Frameworks */,
+				2E2009B91F5AFCFD008FBF26 /* AMPopTip.framework in Frameworks */,
+				2EEA85D71F46CD9C009134EC /* Hero.framework in Frameworks */,
 				2E5F4D461F42FC520050AD76 /* Mapbox.framework in Frameworks */,
+				2E0D92EE1F59AA85005CBAEA /* Animo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E0D92E11F5933F6005CBAEA /* Graph Elements */ = {
+			isa = PBXGroup;
+			children = (
+				2E5F4D4D1F4301A40050AD76 /* Node.swift */,
+				2E5F4D4C1F4301A40050AD76 /* RouteLine.swift */,
+				2E5F4D4E1F4301A40050AD76 /* WebGraph.swift */,
+				2E5F4D4F1F4301A40050AD76 /* Stack.swift */,
+				2E5F4D501F4301A40050AD76 /* Array+RemovObject.swift */,
+				2E5F4D511F4301A40050AD76 /* Queue.swift */,
+			);
+			name = "Graph Elements";
+			sourceTree = "<group>";
+		};
+		2E0D92E81F5941CD005CBAEA /* Map View */ = {
+			isa = PBXGroup;
+			children = (
+				2E5F4D321F42FC270050AD76 /* MapViewController.swift */,
+				2E0D92E61F594145005CBAEA /* MapVC+Utilities.swift */,
+				2E0D92E21F593471005CBAEA /* MapVC+MapboxDelegate.swift */,
+				2E2009B61F5A5470008FBF26 /* MapVC+DrawMap.swift */,
+				2E0D92E91F594233005CBAEA /* MapVC+OrgnizeSubViews.swift */,
+				2E0D92EB1F595451005CBAEA /* MapVC+UserInteraction.swift */,
+				2E2009BB1F5B01EF008FBF26 /* StyleCalloutView.swift */,
+				2E5F4D4B1F4301A40050AD76 /* StyleAnnotationView.swift */,
+				2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */,
+				2E5F4D4A1F4301A40050AD76 /* NodeAnnotation.swift */,
+			);
+			name = "Map View";
+			sourceTree = "<group>";
+		};
 		2E5F4D241F42FC270050AD76 = {
 			isa = PBXGroup;
 			children = (
+				2E2009BD1F5B2651008FBF26 /* Stellar.framework */,
+				2E2009B81F5AFCFD008FBF26 /* AMPopTip.framework */,
+				2E0D92ED1F59AA85005CBAEA /* Animo.framework */,
+				2E7A00E81F4DCE4A001D16C8 /* Hero.framework */,
 				2E5F4D451F42FC520050AD76 /* Mapbox.framework */,
 				2E5F4D2F1F42FC270050AD76 /* Environment Behavior */,
 				2E5F4D2E1F42FC270050AD76 /* Products */,
@@ -93,17 +160,10 @@
 		2E5F4D2F1F42FC270050AD76 /* Environment Behavior */ = {
 			isa = PBXGroup;
 			children = (
+				2EEA85D61F46CD9C009134EC /* Hero.framework */,
 				2E5F4D301F42FC270050AD76 /* AppDelegate.swift */,
-				2E5F4D321F42FC270050AD76 /* MapViewController.swift */,
-				2E5F4D4A1F4301A40050AD76 /* NodeAnnotation.swift */,
-				2E5F4D4B1F4301A40050AD76 /* StyleAnnotationView.swift */,
-				2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */,
-				2E5F4D4C1F4301A40050AD76 /* RouteLine.swift */,
-				2E5F4D4D1F4301A40050AD76 /* Node.swift */,
-				2E5F4D4E1F4301A40050AD76 /* WebGraph.swift */,
-				2E5F4D4F1F4301A40050AD76 /* Stack.swift */,
-				2E5F4D501F4301A40050AD76 /* Array+RemovObject.swift */,
-				2E5F4D511F4301A40050AD76 /* Queue.swift */,
+				2E0D92E81F5941CD005CBAEA /* Map View */,
+				2E0D92E11F5933F6005CBAEA /* Graph Elements */,
 				2E5F4D341F42FC270050AD76 /* Main.storyboard */,
 				2E5F4D3A1F42FC270050AD76 /* Assets.xcassets */,
 				2E5F4D3C1F42FC270050AD76 /* LaunchScreen.storyboard */,
@@ -204,17 +264,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0D92E71F594145005CBAEA /* MapVC+Utilities.swift in Sources */,
+				2E2009BC1F5B01EF008FBF26 /* StyleCalloutView.swift in Sources */,
+				2E2009B71F5A5470008FBF26 /* MapVC+DrawMap.swift in Sources */,
 				2E5F4D521F4301A40050AD76 /* NodeAnnotation.swift in Sources */,
 				2E5F4D571F4301A40050AD76 /* Stack.swift in Sources */,
 				2E5F4D581F4301A40050AD76 /* Array+RemovObject.swift in Sources */,
 				2E5F4D591F4301A40050AD76 /* Queue.swift in Sources */,
 				2E5F4D561F4301A40050AD76 /* WebGraph.swift in Sources */,
+				2E0D92E31F593471005CBAEA /* MapVC+MapboxDelegate.swift in Sources */,
 				2E5F4D331F42FC270050AD76 /* MapViewController.swift in Sources */,
 				2E5F4D531F4301A40050AD76 /* StyleAnnotationView.swift in Sources */,
 				2E5F4D541F4301A40050AD76 /* RouteLine.swift in Sources */,
 				2E851DDD1F442D22003AC75E /* StyleAnnotationImage.swift in Sources */,
 				2E5F4D391F42FC270050AD76 /* Environment_Behavior.xcdatamodeld in Sources */,
 				2E5F4D311F42FC270050AD76 /* AppDelegate.swift in Sources */,
+				2E0D92EC1F595451005CBAEA /* MapVC+UserInteraction.swift in Sources */,
+				2E0D92EA1F594233005CBAEA /* MapVC+OrgnizeSubViews.swift in Sources */,
 				2E5F4D551F4301A40050AD76 /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +408,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Environment Behavior/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -359,6 +426,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Environment Behavior/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

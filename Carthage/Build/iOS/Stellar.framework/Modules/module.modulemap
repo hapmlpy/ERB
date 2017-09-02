@@ -1,0 +1,10 @@
+framework module Stellar {
+  umbrella header "Stellar.h"
+
+  export *
+  module * { export * }
+}
+
+module Stellar.Swift {
+    header "Stellar-Swift.h"
+}
