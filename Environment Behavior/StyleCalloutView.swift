@@ -74,20 +74,22 @@ class StyleCalloutView: UIView, MGLCalloutView {
     
 //
 //    
-//    if animated {
-//      frame = CGRect(x: showRect.midX, y: showRect.maxY, width: 0, height: 0)
-//      viewInside.frame = CGRect(x: rect.midX, y: rect.maxY, width: 0, height: 0)
-//      viewInside.layer.cornerRadius = rectG.size.width/2
-//      let animator = UIViewPropertyAnimator(duration: 0.2, curve: .easeInOut)
-//      animator.addAnimations { [weak self] in
-//        self?.alpha = 1
-//        self?.frame = showRect
-//        self?.viewInside.frame = rect
-//      }
-//      animator.startAnimation()
-//    }else{
-//      frame = showRect
-//    }
+    if animated {
+      frame = CGRect(x: showRect.minX, y: showRect.midY, width: 0, height: 0)
+      viewInside.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+      viewInside.alpha = 0
+      let animator = UIViewPropertyAnimator(duration: 0.2, curve: .easeInOut)
+      animator.addAnimations { [weak self] in
+        self?.frame = showRect
+        self?.layer.cornerRadius = rect.size.width/2
+        //self?.backgroundColor = UIColor.red
+        self?.viewInside.transform = CGAffineTransform(scaleX: 1, y: 1)
+        self?.viewInside.alpha = 1
+      }
+      animator.startAnimation()
+    }else{
+      frame = showRect
+    }
     
     
   }

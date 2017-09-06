@@ -10,14 +10,6 @@ import Foundation
 import Mapbox
 
 extension MapViewController: MGLMapViewDelegate {
-  
-  func mapView(_ mapView:MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool{
-    return true
-  }
-  func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
-    return StyleCalloutView(representedObject: annotation)
-  }
-  
   func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
     let queue = DispatchQueue.global()
     queue.async {
@@ -28,6 +20,24 @@ extension MapViewController: MGLMapViewDelegate {
         gesture.require(toFail: recognizer)
       }
       mapView.addGestureRecognizer(gesture)
+    }
+    
+  }
+  func mapView(_ mapView:MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool{
+    return true
+  }
+  func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
+    return StyleCalloutView(representedObject: annotation)
+  }
+  
+  func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+    if let nodeAnnotation = annotation as? NodeAnnotioan{
+      //let coord = nodeAnnotation.coordinate
+      let coord = CLLocationCoordinate2DMake(nodeAnnotation.coordinate.latitude-0.00027, nodeAnnotation.coordinate.longitude)
+      annotationFitScreen(coordinate: coord, completionHandeler: {
+       self.showBinDetailViewAndTransitToBinVC(coordinate: coord)
+      })
+      
     }
     
   }
@@ -100,9 +110,7 @@ extension MapViewController: MGLMapViewDelegate {
   
   func mapView(_ mapView: MGLMapView, didSelect annotationView: MGLAnnotationView) {
     //print("didSelect annotationView ")
-  }
-  
-  func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+    
   }
 }
 

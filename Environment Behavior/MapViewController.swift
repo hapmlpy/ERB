@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Mapbox
 import CoreLocation
+import AMPopTip
 
 struct MapVCProperties {
   
@@ -32,9 +33,16 @@ struct MapVCProperties {
   let gameIconGap: CGFloat = 20
   let gameIconInitY: CGFloat!
   
+  var detailViewRect = CGRect()
   
   init(){
     gameIconInitY = itemstop+20
+    
+    let dWith = widthBig*0.75
+    let dheight = heightBig*0.5
+    let dx = (widthBig-dWith)/2
+    let dy = heightBig*0.3
+    detailViewRect = CGRect(x: dx, y: dy, width: dWith, height: dheight)
   }
 
 }
@@ -47,6 +55,7 @@ class MapViewController: UIViewController {
   var baseButton: UIButton!
   var infraButton: UIButton!
   var returnButton: UIButton!
+  var binDetailView: UIView!
 
   // fake datas
   var bases = [Node]()
@@ -59,6 +68,8 @@ class MapViewController: UIViewController {
   var polyLineSource: MGLShapeSource?
   var polyLineFeatures = [MGLShape]()
   var pointSource: MGLShapeSource?
+  
+  let pro = MapVCProperties()
   
   // values for drawing map
   var webIDs = [Int]()

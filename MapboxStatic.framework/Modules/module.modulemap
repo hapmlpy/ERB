@@ -1,0 +1,10 @@
+framework module MapboxStatic {
+  umbrella header "MapboxStatic.h"
+
+  export *
+  module * { export * }
+}
+
+module MapboxStatic.Swift {
+    header "MapboxStatic-Swift.h"
+}
