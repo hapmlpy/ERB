@@ -33,20 +33,26 @@ class BinInfromationViewController: UIViewController {
       // Dispose of any resources that can be recreated.
   }
   
+  override var preferredStatusBarStyle: UIStatusBarStyle{
+    return.lightContent
+  }
+  
   func setupHeader(){
     setupHeaderConstrains()
     isHeroEnabled = true
     brandView.heroID = "brand"
     brandView.heroModifiers = [.duration(0)]
-    brandView.backgroundColor = pro.color1
+    brandView.backgroundColor = pro.mapDark
     brandView.alpha = 0
     
-    profileView.image = UIImage(named: "binM")
+    let alphaImage = UIImage(named: "binM")
+    profileView.layer.useImageAlpha(alpha: alphaImage!,
+                                    alphaScale: 1, color: pro.color1, length: 60)
     profileView?.heroID = "profile"
     
     barView.heroID = "bar"
     barView.heroModifiers = [.duration(0)]
-    barView.backgroundColor = pro.color2
+    barView.backgroundColor = pro.mapLight
     
     //postTable.heroModifiers = [.delay(0)]
   }
@@ -69,11 +75,6 @@ class BinInfromationViewController: UIViewController {
       make.width.equalTo(self.view)
       make.height.equalTo(self.view.bounds.height*0.18)
     }
-//    postTable.snp.makeConstraints{ (make) in
-//      make.top.equalTo(barView.snp.bottom)
-//      make.width.equalTo(self.view)
-//      make.height.equalTo(self.view.bounds.height*(0.57))
-//    }
   }
     
 

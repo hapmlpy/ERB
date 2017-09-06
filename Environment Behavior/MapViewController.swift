@@ -17,6 +17,8 @@ struct MapVCProperties {
   let color1 = UIColor(hue: 66/360, saturation: 72/100, brightness: 90/100, alpha: 1.0)
   let color2 = UIColor(hue: 104/360, saturation: 57/100, brightness: 83/100, alpha: 1.0)
   let color3 = UIColor(hue: 209/360, saturation: 19/100, brightness: 46/100, alpha: 1.0)
+  let mapDark = UIColor(red: 34.0/255.0, green: 35.0/255.0, blue: 44.0/255.0, alpha: 1.0)
+  let mapLight = UIColor(red: 67.0/255.0, green: 71.0/255.0, blue: 86.0/255.0, alpha: 1.0)
   
   let closeToWhite = UIColor(red: 226.0/255.0, green: 251.0/255.0, blue: 250.0/255.0, alpha: 1.0)
   let gray = UIColor(red: 198.0/255.0, green: 200.0/255.0, blue: 206.0/255.0, alpha: 1.0)
@@ -39,9 +41,9 @@ struct MapVCProperties {
     gameIconInitY = itemstop+20
     
     let dWith = widthBig*0.75
-    let dheight = heightBig*0.5
+    let dheight = heightBig*0.65
     let dx = (widthBig-dWith)/2
-    let dy = heightBig*0.3
+    let dy = heightBig*0.15
     detailViewRect = CGRect(x: dx, y: dy, width: dWith, height: dheight)
   }
 

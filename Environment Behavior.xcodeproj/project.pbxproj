@@ -45,6 +45,7 @@
 		2E7A00EA1F4DCE4A001D16C8 /* Hero.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7A00E81F4DCE4A001D16C8 /* Hero.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E851DDD1F442D22003AC75E /* StyleAnnotationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */; };
 		2EEA85D71F46CD9C009134EC /* Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEA85D61F46CD9C009134EC /* Hero.framework */; };
+		2EFA78821F600C9B0056C628 /* Funtions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA78811F600C9B0056C628 /* Funtions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,6 +103,7 @@
 		2E7A00E81F4DCE4A001D16C8 /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hero.framework; path = Carthage/Build/iOS/Hero.framework; sourceTree = "<group>"; };
 		2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleAnnotationImage.swift; sourceTree = "<group>"; };
 		2EEA85D61F46CD9C009134EC /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hero.framework; path = Carthage/Build/iOS/Hero.framework; sourceTree = SOURCE_ROOT; };
+		2EFA78811F600C9B0056C628 /* Funtions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Funtions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				2E0D92EB1F595451005CBAEA /* MapVC+UserInteraction.swift */,
 				2E2009BB1F5B01EF008FBF26 /* StyleCalloutView.swift */,
 				2E5F4D4B1F4301A40050AD76 /* StyleAnnotationView.swift */,
+				2EFA78811F600C9B0056C628 /* Funtions.swift */,
 				2E851DDC1F442D22003AC75E /* StyleAnnotationImage.swift */,
 				2E5F4D4A1F4301A40050AD76 /* NodeAnnotation.swift */,
 			);
@@ -296,6 +299,7 @@
 				2E0D92E31F593471005CBAEA /* MapVC+MapboxDelegate.swift in Sources */,
 				2E5F4D331F42FC270050AD76 /* MapViewController.swift in Sources */,
 				2E5F4D531F4301A40050AD76 /* StyleAnnotationView.swift in Sources */,
+				2EFA78821F600C9B0056C628 /* Funtions.swift in Sources */,
 				2E5F4D541F4301A40050AD76 /* RouteLine.swift in Sources */,
 				2E851DDD1F442D22003AC75E /* StyleAnnotationImage.swift in Sources */,
 				2E5F4D391F42FC270050AD76 /* Environment_Behavior.xcdatamodeld in Sources */,

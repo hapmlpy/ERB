@@ -31,11 +31,12 @@ extension MapViewController: MGLMapViewDelegate {
   }
   
   func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+    mapPrepareForShot(isShot: true)
     if let nodeAnnotation = annotation as? NodeAnnotioan{
       //let coord = nodeAnnotation.coordinate
-      let coord = CLLocationCoordinate2DMake(nodeAnnotation.coordinate.latitude-0.00027, nodeAnnotation.coordinate.longitude)
-      annotationFitScreen(coordinate: coord, completionHandeler: {
-       self.showBinDetailViewAndTransitToBinVC(coordinate: coord)
+      let coord = CLLocationCoordinate2DMake(nodeAnnotation.coordinate.latitude-0.00055, nodeAnnotation.coordinate.longitude)
+      annotationFitScreen(coordinate: coord, completionHandeler: { [weak self] in
+       self?.showBinDetailViewAndTransitToBinVC(coordinate: coord)
       })
       
     }
