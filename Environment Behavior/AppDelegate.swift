@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //使用core data方法
     firstVC.managedObjectContext = self.managedObjectContext
     //打印数据路径
-    dataModel.documentsDirectory()
+    //dataModel.documentsDirectory()
 
     return true
   }
