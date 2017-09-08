@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreData
 import Mapbox
 import CoreLocation
 import AMPopTip
@@ -70,6 +71,16 @@ class MapViewController: UIViewController {
   var polyLineSource: MGLShapeSource?
   var polyLineFeatures = [MGLShape]()
   var pointSource: MGLShapeSource?
+
+  //commnication with other vc
+  var isReturnFromOtherVC : Bool?
+
+  
+  //从上一页获得的数据
+  var dataModel = DataModel()
+  
+  //获得core data的context,用于储存小型数据
+  var managedObjectContext: NSManagedObjectContext!
   
   let pro = MapVCProperties()
   
@@ -101,29 +112,7 @@ class MapViewController: UIViewController {
 
 }
 
-// group function
-public extension Sequence {
-  func categorise<U : Hashable>(_ key: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
-    var dict: [U:[Iterator.Element]] = [:]
-    for el in self {
-        let key = key(el)
-        if case nil = dict[key]?.append(el) { dict[key] = [el] }
-    }
-    return dict
-  }
-}
-//appen element in dictionary
-extension Dictionary {
-  mutating func merge(with dictionary: Dictionary) {
-    dictionary.forEach { updateValue($1, forKey: $0) }
-  }
-  
-  func merged(with dictionary: Dictionary) -> Dictionary {
-    var dict = self
-    dict.merge(with: dictionary)
-    return dict
-  }
-}
+
 
 
 

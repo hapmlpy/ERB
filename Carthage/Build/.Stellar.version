@@ -1,0 +1,18 @@
+{
+  "iOS" : [
+    {
+      "hash" : "63f482bd84f856684bfb988fd2abee5cf66c3f7d05de9accd7ee4a7280b3b158",
+      "name" : "Stellar"
+    }
+  ],
+  "commitish" : "0.66",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+
+  ]
+}

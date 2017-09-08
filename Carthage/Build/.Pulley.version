@@ -1,0 +1,18 @@
+{
+  "iOS" : [
+    {
+      "hash" : "8aa0eb58fbf296a0082e3a95ef19d5bbcd29c07086ee6607c06ba90c7a29dedd",
+      "name" : "Pulley"
+    }
+  ],
+  "commitish" : "1.5.2",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+
+  ]
+}

@@ -11,6 +11,15 @@ import Mapbox
 
 extension MapViewController: MGLMapViewDelegate {
   func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+    
+    //this conditation is set by previous vc
+    if isReturnFromOtherVC == true{
+      print("\n load map( back from other vc )")
+      let region = dataModel.currentRegion
+      print("load region is \(region)")
+      mapView.setVisibleCoordinateBounds(region, animated: false)
+    }
+    
     let queue = DispatchQueue.global()
     queue.async {
       self.addLayer(to:style)

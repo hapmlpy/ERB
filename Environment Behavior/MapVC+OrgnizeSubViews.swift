@@ -16,12 +16,12 @@ extension MapViewController{
   
   //MARK: - Manage Map View
   func initMapView(){
-    mapView.delegate = self
-    mapView.zoomLevel = 14
-    mapView.showsUserLocation = true
-    mapView.userTrackingMode = .follow
-    
-    initMapViewElements()
+      mapView.delegate = self
+      mapView.zoomLevel = 14
+      mapView.showsUserLocation = true
+      mapView.userTrackingMode = .follow
+      
+      initMapViewElements()
   }
   
   func initMapViewElements(){
@@ -339,13 +339,17 @@ extension MapViewController{
     superView.addSubview(detailBtn)
     detailBtn.clipsToBounds = true
     
-    detailBtn.addTarget(self, action: #selector(toBinInfromationVC(_:)), for: .touchUpInside)
+    detailBtn.addTarget(self, action: #selector(tobininformationVC(_:)), for: .touchUpInside)
     
   }
   
-  func toBinInfromationVC(_ sender: AnyObject){
-    if let binInfroVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "binInfroVC") as? BinInfromationViewController{
-      binInfroVC.heroModalAnimationType = .cover(direction: .up)
+  func tobininformationVC(_ sender: AnyObject){
+    //save current map region, and use it again
+    //when come back from bin information vc
+    saveCurrentMapRegion()
+    
+    if let binInfroVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "binInfroVC") as? BinInformationViewController{
+      binInfroVC.heroModalAnimationType = .zoom
       hero_replaceViewController(with: binInfroVC)
     }
     //dismiss detailView

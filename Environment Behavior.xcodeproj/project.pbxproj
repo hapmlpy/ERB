@@ -13,9 +13,14 @@
 		2E0D92EC1F595451005CBAEA /* MapVC+UserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D92EB1F595451005CBAEA /* MapVC+UserInteraction.swift */; };
 		2E0D92EE1F59AA85005CBAEA /* Animo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0D92ED1F59AA85005CBAEA /* Animo.framework */; };
 		2E0D92EF1F59AA85005CBAEA /* Animo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0D92ED1F59AA85005CBAEA /* Animo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E0E20471F62600900C0AEB3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0E20461F62600900C0AEB3 /* DataModel.swift */; };
+		2E0E20491F62DEA400C0AEB3 /* MapVC+DataManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0E20481F62DEA400C0AEB3 /* MapVC+DataManipulation.swift */; };
+		2E0E204C1F62EEAA00C0AEB3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E0E204A1F62EEAA00C0AEB3 /* DataModel.xcdatamodeld */; };
+		2E0E204F1F62F1A000C0AEB3 /* CurrentRegion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0E204D1F62F1A000C0AEB3 /* CurrentRegion+CoreDataClass.swift */; };
+		2E0E20501F62F1A000C0AEB3 /* CurrentRegion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0E204E1F62F1A000C0AEB3 /* CurrentRegion+CoreDataProperties.swift */; };
 		2E1003041F5F91CE0093A380 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1003031F5F91CE0093A380 /* SnapKit.framework */; };
 		2E1003051F5F91CE0093A380 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1003031F5F91CE0093A380 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2E1640421F5D85A6006CFC4D /* BinInfromationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1640411F5D85A6006CFC4D /* BinInfromationViewController.swift */; };
+		2E1640421F5D85A6006CFC4D /* BinInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1640411F5D85A6006CFC4D /* BinInformationViewController.swift */; };
 		2E1640441F5D8A03006CFC4D /* Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1640431F5D8A03006CFC4D /* Hero.framework */; };
 		2E1640451F5D8A03006CFC4D /* Hero.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1640431F5D8A03006CFC4D /* Hero.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E2009B71F5A5470008FBF26 /* MapVC+DrawMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2009B61F5A5470008FBF26 /* MapVC+DrawMap.swift */; };
@@ -26,11 +31,11 @@
 		2E2009BF1F5B2651008FBF26 /* Stellar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2009BD1F5B2651008FBF26 /* Stellar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E38B7421F5EBF2E001CC676 /* MapboxStatic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E38B7411F5EBF2E001CC676 /* MapboxStatic.framework */; };
 		2E38B7431F5EBF2E001CC676 /* MapboxStatic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E38B7411F5EBF2E001CC676 /* MapboxStatic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E3EA9A31F613743001E3B6B /* Assets 16-13-33-715.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E3EA9A21F613743001E3B6B /* Assets 16-13-33-715.xcassets */; };
 		2E5F4D311F42FC270050AD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D301F42FC270050AD76 /* AppDelegate.swift */; };
 		2E5F4D331F42FC270050AD76 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D321F42FC270050AD76 /* MapViewController.swift */; };
 		2E5F4D361F42FC270050AD76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F4D341F42FC270050AD76 /* Main.storyboard */; };
 		2E5F4D391F42FC270050AD76 /* Environment_Behavior.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4D371F42FC270050AD76 /* Environment_Behavior.xcdatamodeld */; };
-		2E5F4D3B1F42FC270050AD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F4D3A1F42FC270050AD76 /* Assets.xcassets */; };
 		2E5F4D3E1F42FC270050AD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F4D3C1F42FC270050AD76 /* LaunchScreen.storyboard */; };
 		2E5F4D461F42FC520050AD76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5F4D451F42FC520050AD76 /* Mapbox.framework */; };
 		2E5F4D471F42FC520050AD76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5F4D451F42FC520050AD76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -75,20 +80,25 @@
 		2E0D92E91F594233005CBAEA /* MapVC+OrgnizeSubViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapVC+OrgnizeSubViews.swift"; sourceTree = "<group>"; };
 		2E0D92EB1F595451005CBAEA /* MapVC+UserInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapVC+UserInteraction.swift"; sourceTree = "<group>"; };
 		2E0D92ED1F59AA85005CBAEA /* Animo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Animo.framework; path = Carthage/Build/iOS/Animo.framework; sourceTree = "<group>"; };
+		2E0E20461F62600900C0AEB3 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		2E0E20481F62DEA400C0AEB3 /* MapVC+DataManipulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapVC+DataManipulation.swift"; sourceTree = "<group>"; };
+		2E0E204B1F62EEAA00C0AEB3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		2E0E204D1F62F1A000C0AEB3 /* CurrentRegion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentRegion+CoreDataClass.swift"; path = "Environment Behavior/CurrentRegion+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2E0E204E1F62F1A000C0AEB3 /* CurrentRegion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentRegion+CoreDataProperties.swift"; path = "Environment Behavior/CurrentRegion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2E1003031F5F91CE0093A380 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapKit.framework; sourceTree = "<group>"; };
-		2E1640411F5D85A6006CFC4D /* BinInfromationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinInfromationViewController.swift; sourceTree = "<group>"; };
+		2E1640411F5D85A6006CFC4D /* BinInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinInformationViewController.swift; sourceTree = "<group>"; };
 		2E1640431F5D8A03006CFC4D /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hero.framework; path = Carthage/Build/iOS/Hero.framework; sourceTree = "<group>"; };
 		2E2009B61F5A5470008FBF26 /* MapVC+DrawMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapVC+DrawMap.swift"; sourceTree = "<group>"; };
 		2E2009B81F5AFCFD008FBF26 /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = Carthage/Build/iOS/AMPopTip.framework; sourceTree = "<group>"; };
 		2E2009BB1F5B01EF008FBF26 /* StyleCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleCalloutView.swift; sourceTree = "<group>"; };
 		2E2009BD1F5B2651008FBF26 /* Stellar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stellar.framework; path = Carthage/Build/iOS/Stellar.framework; sourceTree = "<group>"; };
 		2E38B7411F5EBF2E001CC676 /* MapboxStatic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapboxStatic.framework; sourceTree = "<group>"; };
+		2E3EA9A21F613743001E3B6B /* Assets 16-13-33-715.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 16-13-33-715.xcassets"; sourceTree = "<group>"; };
 		2E5F4D2D1F42FC270050AD76 /* Environment Behavior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Environment Behavior.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5F4D301F42FC270050AD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E5F4D321F42FC270050AD76 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2E5F4D351F42FC270050AD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E5F4D381F42FC270050AD76 /* Environment_Behavior.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Environment_Behavior.xcdatamodel; sourceTree = "<group>"; };
-		2E5F4D3A1F42FC270050AD76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E5F4D3D1F42FC270050AD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E5F4D3F1F42FC270050AD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E5F4D451F42FC520050AD76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
@@ -144,6 +154,7 @@
 				2E5F4D321F42FC270050AD76 /* MapViewController.swift */,
 				2E0D92E61F594145005CBAEA /* MapVC+Utilities.swift */,
 				2E0D92E21F593471005CBAEA /* MapVC+MapboxDelegate.swift */,
+				2E0E20481F62DEA400C0AEB3 /* MapVC+DataManipulation.swift */,
 				2E2009B61F5A5470008FBF26 /* MapVC+DrawMap.swift */,
 				2E0D92E91F594233005CBAEA /* MapVC+OrgnizeSubViews.swift */,
 				2E0D92EB1F595451005CBAEA /* MapVC+UserInteraction.swift */,
@@ -159,6 +170,8 @@
 		2E5F4D241F42FC270050AD76 = {
 			isa = PBXGroup;
 			children = (
+				2E0E204D1F62F1A000C0AEB3 /* CurrentRegion+CoreDataClass.swift */,
+				2E0E204E1F62F1A000C0AEB3 /* CurrentRegion+CoreDataProperties.swift */,
 				2E1003031F5F91CE0093A380 /* SnapKit.framework */,
 				2E38B7411F5EBF2E001CC676 /* MapboxStatic.framework */,
 				2E1640431F5D8A03006CFC4D /* Hero.framework */,
@@ -185,11 +198,13 @@
 			children = (
 				2EEA85D61F46CD9C009134EC /* Hero.framework */,
 				2E5F4D301F42FC270050AD76 /* AppDelegate.swift */,
-				2E1640411F5D85A6006CFC4D /* BinInfromationViewController.swift */,
+				2E0E20461F62600900C0AEB3 /* DataModel.swift */,
+				2E0E204A1F62EEAA00C0AEB3 /* DataModel.xcdatamodeld */,
+				2E1640411F5D85A6006CFC4D /* BinInformationViewController.swift */,
 				2E0D92E81F5941CD005CBAEA /* Map View */,
 				2E0D92E11F5933F6005CBAEA /* Graph Elements */,
 				2E5F4D341F42FC270050AD76 /* Main.storyboard */,
-				2E5F4D3A1F42FC270050AD76 /* Assets.xcassets */,
+				2E3EA9A21F613743001E3B6B /* Assets 16-13-33-715.xcassets */,
 				2E5F4D3C1F42FC270050AD76 /* LaunchScreen.storyboard */,
 				2E5F4D3F1F42FC270050AD76 /* Info.plist */,
 				2E5F4D371F42FC270050AD76 /* Environment_Behavior.xcdatamodeld */,
@@ -259,8 +274,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E3EA9A31F613743001E3B6B /* Assets 16-13-33-715.xcassets in Resources */,
 				2E5F4D3E1F42FC270050AD76 /* LaunchScreen.storyboard in Resources */,
-				2E5F4D3B1F42FC270050AD76 /* Assets.xcassets in Resources */,
 				2E5F4D361F42FC270050AD76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,17 +308,22 @@
 				2E2009B71F5A5470008FBF26 /* MapVC+DrawMap.swift in Sources */,
 				2E5F4D521F4301A40050AD76 /* NodeAnnotation.swift in Sources */,
 				2E5F4D571F4301A40050AD76 /* Stack.swift in Sources */,
+				2E0E204F1F62F1A000C0AEB3 /* CurrentRegion+CoreDataClass.swift in Sources */,
 				2E5F4D581F4301A40050AD76 /* Array+RemovObject.swift in Sources */,
 				2E5F4D591F4301A40050AD76 /* Queue.swift in Sources */,
 				2E5F4D561F4301A40050AD76 /* WebGraph.swift in Sources */,
 				2E0D92E31F593471005CBAEA /* MapVC+MapboxDelegate.swift in Sources */,
+				2E0E204C1F62EEAA00C0AEB3 /* DataModel.xcdatamodeld in Sources */,
 				2E5F4D331F42FC270050AD76 /* MapViewController.swift in Sources */,
+				2E0E20491F62DEA400C0AEB3 /* MapVC+DataManipulation.swift in Sources */,
 				2E5F4D531F4301A40050AD76 /* StyleAnnotationView.swift in Sources */,
 				2EFA78821F600C9B0056C628 /* Funtions.swift in Sources */,
 				2E5F4D541F4301A40050AD76 /* RouteLine.swift in Sources */,
 				2E851DDD1F442D22003AC75E /* StyleAnnotationImage.swift in Sources */,
+				2E0E20471F62600900C0AEB3 /* DataModel.swift in Sources */,
 				2E5F4D391F42FC270050AD76 /* Environment_Behavior.xcdatamodeld in Sources */,
-				2E1640421F5D85A6006CFC4D /* BinInfromationViewController.swift in Sources */,
+				2E1640421F5D85A6006CFC4D /* BinInformationViewController.swift in Sources */,
+				2E0E20501F62F1A000C0AEB3 /* CurrentRegion+CoreDataProperties.swift in Sources */,
 				2E5F4D311F42FC270050AD76 /* AppDelegate.swift in Sources */,
 				2E0D92EC1F595451005CBAEA /* MapVC+UserInteraction.swift in Sources */,
 				2E0D92EA1F594233005CBAEA /* MapVC+OrgnizeSubViews.swift in Sources */,
@@ -488,6 +508,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		2E0E204A1F62EEAA00C0AEB3 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E0E204B1F62EEAA00C0AEB3 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 2E0E204B1F62EEAA00C0AEB3 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		2E5F4D371F42FC270050AD76 /* Environment_Behavior.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

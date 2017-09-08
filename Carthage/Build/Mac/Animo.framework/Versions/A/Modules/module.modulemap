@@ -1,0 +1,10 @@
+framework module Animo {
+  umbrella header "Animo.h"
+
+  export *
+  module * { export * }
+}
+
+module Animo.Swift {
+    header "Animo-Swift.h"
+}

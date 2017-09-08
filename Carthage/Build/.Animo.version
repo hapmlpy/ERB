@@ -1,0 +1,21 @@
+{
+  "iOS" : [
+    {
+      "hash" : "522594773098b7d623ce28b7cb2638f0ee5c547a98b92c076ba81f1027bf872a",
+      "name" : "Animo"
+    }
+  ],
+  "commitish" : "1.3.1",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+    {
+      "hash" : "8848b7a7e5cf94221184384fc99ffd036d95e239cec1477507b6d2d41dfcf0f8",
+      "name" : "Animo"
+    }
+  ]
+}

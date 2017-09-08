@@ -1,0 +1,7 @@
+github "lkzhao/Hero"
+github "52inc/Pulley"
+github "AugustRush/Stellar"
+github "andreamazz/AMPopTip"
+binary "https://www.mapbox.com/ios-sdk/Mapbox-iOS-SDK.json" ~> 3.6
+github "SnapKit/SnapKit" ~> 3.2.0
+github "eure/Animo" >= 1.2.0

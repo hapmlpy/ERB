@@ -1,0 +1,21 @@
+{
+  "iOS" : [
+    {
+      "hash" : "68ce42bf3cd1c13499e422dd804c7b42c10a4aaeed60990033260e99aae6c308",
+      "name" : "TinyConstraints"
+    }
+  ],
+  "commitish" : "2.1.2",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+    {
+      "hash" : "353f013a5c43e897542912395d7b794df225ea5d95eec72d132a70ee2bc71675",
+      "name" : "TinyConstraints_tvOS"
+    }
+  ],
+  "Mac" : [
+
+  ]
+}

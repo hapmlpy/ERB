@@ -34,3 +34,27 @@ extension CALayer{
   }
   
 }
+
+// group function
+public extension Sequence {
+  func categorise<U : Hashable>(_ key: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
+    var dict: [U:[Iterator.Element]] = [:]
+    for el in self {
+      let key = key(el)
+      if case nil = dict[key]?.append(el) { dict[key] = [el] }
+    }
+    return dict
+  }
+}
+//appen element in dictionary
+extension Dictionary {
+  mutating func merge(with dictionary: Dictionary) {
+    dictionary.forEach { updateValue($1, forKey: $0) }
+  }
+  
+  func merged(with dictionary: Dictionary) -> Dictionary {
+    var dict = self
+    dict.merge(with: dictionary)
+    return dict
+  }
+}

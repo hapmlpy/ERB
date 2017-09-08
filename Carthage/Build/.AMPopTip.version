@@ -1,0 +1,18 @@
+{
+  "iOS" : [
+    {
+      "hash" : "8ea69b723d5b6f8472aefcec68f4f1540e58614ba97b1cabe5006c73278457f5",
+      "name" : "AMPopTip"
+    }
+  ],
+  "commitish" : "2.1.7",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+
+  ]
+}
